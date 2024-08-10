@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una página de felicitación especial para Yexalen, llena de alegría, amor y buenos deseos.">
+    <title>Otra Página</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        main {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 15px;
+            max-width: 90%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            min-height: 300px;
+            overflow: auto;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOutDown {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(20px); }
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #ff91c8;
+            margin-bottom: 15px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+        }
+
+        .button {
+            padding: 10px;
+            background: #dd419f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #f891ff;
+        }
+
+        .close-button {
+            background: #ff4b5c;
+        }
+
+        .close-button:hover {
+            background: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Escrito por Teo</h1>
+        </header>
+        <p>
+            Hola ¡Yexalen! :) Hoy es un día verdaderamente especial, lleno de alegría y celebración por la maravillosa persona que eres. En esta ocasión, quiero desearte todo lo mejor que la vida tiene para ofrecerte. Espero que cada momento de este día esté lleno de risas, amor y la compañía de aquellas personas que más quieres.
+            Que todos tus deseos se hagan realidad en este día tan especial. Mereces que cada sueño que has guardado en tu corazón se materialice, y que cada paso que des te acerque más a la felicidad. La vida es un viaje lleno de oportunidades, y hoy es un recordatorio perfecto de que cada nuevo año trae consigo nuevas aventuras y experiencias.
+            Recuerda siempre cuán valiosa eres para quienes te rodean. Tu luz y tu energía positiva iluminan nuestras vidas, y estamos agradecidos por cada instante compartido contigo. ¡Brindemos por un año lleno de salud, amor y muchas sorpresas! Disfruta de tu día al máximo, Estrella, ¡te lo mereces!
+            ( •.•) ¡Espero que sea de tu agrado! :D
+        </p>
+    </main>
+    <div class="button-container">
+        <a href="modulo1.html" class="button">Regresar a la Tarjeta</a>
+        <button class="button close-button" onclick="closeWindow()">Cerrar Ventana</button>
+    </div>
+    <script>
+        window.addEventListener('beforeunload', function() {
+            document.querySelector('main').style.animation = 'fadeOutDown 1s forwards';
+        });
+
+        function closeWindow() {
+            if (window.self === window.top) {
+                alert("No se puede cerrar la ventana que no fue abierta por un script.");
+            } else {
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>
